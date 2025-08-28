@@ -5,7 +5,7 @@ function calculateGrade() {
   const resultDiv = document.getElementById('gradeResult');
 
   // Checking if value entered is ValidityState, that is between 0 and 100
-  if(isNaN(score) || score < 0 || score > 100) {
+  if (isNaN(score) || score < 0 || score > 100) {
     resultDiv.textContent = "Please enter a valid number between 0 and 100.";
     resultDiv.className = "result error";
     resultDiv.style.display = "grid";
@@ -45,7 +45,7 @@ function celsiusToFahrenheit(celsius) {
 
 // Function to convert fahrenheitToCelsius
 function fahrenheitToCelsius(fahrenheit) {
-  return (fahrenheit - 32) * 5/9
+  return (fahrenheit - 32) * 5 / 9
 }
 
 function convertTemperature() {
@@ -78,4 +78,48 @@ function convertTemperature() {
     tempResult.className = 'result'
     tempResult.style.display = "grid";
   }
+}
+
+// Function demonstrating nested loops
+function generatePattern() {
+  const num = parseInt(document.getElementById('patternInput').value);
+  const resultDiv = document.getElementById('patternResult');
+
+  if (isNaN(num) || num <= 0 || num > 10) {
+    resultDiv.innerHTML = 'Please enter a number between 1 and 10!';
+    resultDiv.className = 'result error'
+    resultDiv.style.display = 'block';
+    return;
+  }
+
+  let pattern = '<h4>Number Pyramid Pattern:</h4>';
+
+  // Nested for loop to create pyramid pattern
+  for (let i = 1; i <= num; i++) {
+    pattern += '<div>';
+    for (let j = 1; j <= i; j++) {
+      pattern += `${j} `;
+    }
+    pattern += '</div>';
+  }
+
+  
+  pattern += '<h4>Multiplication Table:</h4>';
+  let multiplier = 1;
+  while (multiplier <= 5) {
+    pattern += `<div>${num} x ${multiplier} = ${num * multiplier}</div>`;
+    multiplier++;
+  }
+
+  resultDiv.innerHTML = pattern;
+  resultDiv.style.display = 'block';
+
+}
+
+// Changing background color with an alert
+function changeBgColor() {
+  let body = document.getElementById('body');
+
+  body.style.backgroundColor = "#4caf50";
+  alert("Got you!");
 }

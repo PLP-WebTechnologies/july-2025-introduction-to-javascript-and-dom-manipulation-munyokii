@@ -1,37 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Introduction to Javascript in Web Development</title>
-  
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to Javascript in Web Development</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body id="body">
     <h1>Welcome to JavaScript</h1>
-    <p>Interactive examples covering variables, functions, loops, and DOM manipulation</p>
-  <div class="section">
+    <p>
+      Interactive examples covering variables, functions, loops, and DOM
+      manipulation
+    </p>
+    <div class="section">
       <h2>Grade Calculator</h2>
       <div class="input-group">
-          <input type="number" id="scoreInput" placeholder="Enter score (0-100)" min="0" max="100">
-          <button onclick="calculateGrade()">Get Grade</button>
+        <input
+          type="number"
+          id="scoreInput"
+          placeholder="Enter score (0-100)"
+          min="0"
+          max="100"
+        />
+        <button onclick="calculateGrade()">Get Grade</button>
       </div>
-      <div id="gradeResult" class="result" style="display: none;"></div>
-  </div>
+      <div id="gradeResult" class="result" style="display: none"></div>
+    </div>
 
-  <div class="section">
+    <div class="section">
       <h2>Temperature Converter</h2>
       <div class="input-group">
-        <input type="number" id="tempInput" placeholder="Enter temperature">
+        <input type="number" id="tempInput" placeholder="Enter temperature" />
         <select id="tempUnit">
-            <option value="c">Celsius to Fahrenheit</option>
-            <option value="f">Fahrenheit to Celsius</option>
+          <option value="c">Celsius to Fahrenheit</option>
+          <option value="f">Fahrenheit to Celsius</option>
         </select>
         <button onclick="convertTemperature()">Convert</button>
       </div>
-      <div id="tempResult" class="result" style="display: none;"></div>
-  </div>
-  
-  <script src="script.js"></script>
-</body>
+      <div id="tempResult" class="result" style="display: none"></div>
+    </div>
+
+    <div class="section">
+      <h3>Number Pattern Generator</h3>
+      <div class="input-group">
+        <input
+          type="text"
+          id="patternInput"
+          placeholder="Enter number (1-10)"
+          
+        />
+        <button onclick="generatePattern()">Generate Pattern</button>
+      </div>
+      <div id="patternResult" class="loop-demo" style="display: none"></div>
+    </div>
+
+    <footer>
+      <p>Hey you, wanna see something cool?</p>
+      <div class="btn">
+        <button onclick="changeBgColor()">Click Me</button>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>

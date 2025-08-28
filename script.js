@@ -33,7 +33,49 @@ function calculateGrade() {
     grade = "E";
   }
 
-  resultDiv.textContent = `Your grade is: ${}`;
+  resultDiv.textContent = `Your grade is: ${grade}`;
   resultDiv.className = 'result'
   resultDiv.style.display = "grid";
+};
+
+// Function to convert celsiusToFahrenheit
+function celsiusToFahrenheit(celsius) {
+  return (celsius * 1.8) + 32
+}
+
+// Function to convert fahrenheitToCelsius
+function fahrenheitToCelsius(fahrenheit) {
+  return (fahrenheit - 32) * 5/9
+}
+
+function convertTemperature() {
+  const tempInput = parseFloat(document.getElementById('tempInput').value);
+  const tempResult = document.getElementById('tempResult');
+
+  if (isNaN(tempInput)) {
+    tempResult.textContent = "Please enter a valid number.";
+    tempResult.className = "result error";
+    tempResult.style.display = "grid";
+    return;
+  }
+
+  const tempUnit = document.getElementById('tempUnit').value;
+
+  let convertedTemp, fromUnit, toUnit;
+
+  if (tempUnit === "c") {
+    convertedTemp = celsiusToFahrenheit(tempInput)
+    fromUnit = '°C';
+    toUnit = '°F';
+    tempResult.textContent = `${tempInput}${fromUnit} is equal to ${convertedTemp.toFixed(2)}${toUnit}`;
+    tempResult.className = 'result'
+    tempResult.style.display = "grid";
+  } else {
+    convertedTemp = fahrenheitToCelsius(tempInput)
+    fromUnit = '°F';
+    toUnit = '°C';
+    tempResult.textContent = `${tempInput}${fromUnit} is equal to ${convertedTemp.toFixed(2)}${toUnit}`;
+    tempResult.className = 'result'
+    tempResult.style.display = "grid";
+  }
 }
